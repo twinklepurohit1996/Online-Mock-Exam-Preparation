@@ -1,0 +1,14 @@
+*{margin:0px;padding:0px;}
+/*Welcome Page Navbar*/
+.navbar{background-color:333C83;top:fixed;}
+.navbar-brand{color: antiquewhite;}
+.navbar-brand:hover{color:FDAF75;}
+.btn_login{color:antiquewhite ; text-decoration: none;}
+.btn_login:hover{color:FDAF75;}
+
+/*Welcome Page Footer*/
+.footer{background-color:333C83;height:30%;width: 100%;}
+
+/*Welcome Page MAin*/
+.main{height:100%;}
+.main_row{height:100%;}

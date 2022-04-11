@@ -1,0 +1,46 @@
+extends layout.pug 
+
+block content
+    include nav.pug
+    include side.pug
+    div.web
+        <h1 class="text-center text-uppercase p-3"> Subject Table </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 p-3 card">
+                    <p>#{mess}</p>
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Reference ID</th>
+                                <th>Subject Name</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>   
+                            each item in data               
+                                tr
+                                    td= item.id
+                                    td= item.rid
+                                    td= item.subname
+                                    td 
+                                        a(href="/admin/sub_edit/" + item.id) 
+                                            i.fas.icon.fa-pencil
+                                    td 
+                                        a(href="/admin/sub_delete/" + item.id) 
+                                            i.fas.icon.fa-trash-alt
+                                    td 
+                                        a(href="/admin/sub_status/" + item.id) 
+                                            i.fas.icon.fa-eye
+                        </tbody>
+                    </table>    
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>    
+        
+        

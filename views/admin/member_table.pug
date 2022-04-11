@@ -1,0 +1,40 @@
+extends layout.pug 
+
+block content 
+    include nav.pug
+    include side.pug
+    div.web
+        h1(class="text-center text-uppercase p-3") Member Table
+        div.container
+            div.row
+                div.col-lg-2
+                div.col-lg-10.card
+                    table(class="table table-bordered text-center")
+                        thead
+                            tr
+                                th Id
+                                th Name
+                                th Date Of Birth
+                                th Gender
+                                th Email
+                                th Date  and Time
+                                th Mobile Number
+                                th Password
+                                th image
+                                th Delete
+                        tbody
+                            each mem in data               
+                                tr
+                                    td= mem.id
+                                    td= mem.name
+                                    td= mem.dob
+                                    td= mem.gender
+                                    td= mem.email  
+                                    td= mem.Date_Time
+                                    td= mem.mobile
+                                    td= mem.pass
+                                    td= mem.image
+                                    td 
+                                        a(href="/admin/member_delete/" + mem.id) 
+                                            i.fas.icon.fa-trash-alt
+        

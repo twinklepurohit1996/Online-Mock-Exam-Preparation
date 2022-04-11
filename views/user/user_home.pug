@@ -1,0 +1,18 @@
+extends layout_user.pug 
+
+block content
+    include navbar_home.pug
+    div.head
+        h1.heading.text-center.p-4 Home Page
+        div.container-fluid
+            div.row      
+                each item in mydata 
+                    <div class="card cd">
+                        <div class="card-body">
+                            <h5 class="card-title"><span>#{item.rid}</span></h5>
+                            <p class="card-text">#{item.subname}</p>
+                            <p class="card-text">#{item.des}</p>
+                            <button class="btn btn-primary"><a class="btn_start" href="/instruction">Start</a></button>
+                        </div>
+                    </div>
+            

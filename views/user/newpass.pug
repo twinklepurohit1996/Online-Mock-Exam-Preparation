@@ -1,0 +1,19 @@
+extends layout.pug 
+
+block content 
+    h1.text-center Password  Page
+    div.container.p-3
+        div.row
+            div.col-lg-3
+            div.col-lg-6.card.p-4.bg-light
+                form(action="/pass_verify" method="post" class="form") 
+                    div.mb-4
+                        label(for="pass" class="form-label") New Password
+                        input(type="password" class="form-control" id="pass" name="pass" aria-describedby="pass" placeholder="New Password")
+                    div.mb-4
+                        label(for="npass" class="form-label") Confrim Password
+                        input(type="password" class="form-control" id="npass" name="npass" aria-describedby="npass" placeholder="Confirm Password")
+                    div.mb-4.text-center
+                        button(type="submit" class="btn btn-warning") Submit
+                        p=message
+            div.col-lg-3

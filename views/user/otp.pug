@@ -1,0 +1,16 @@
+extends layout.pug 
+
+block content 
+    h1.text-center.p-5 Otp Page
+    div.container.p-3
+        div.row
+            div.col-lg-3
+            div.col-lg-6.card.p-4.bg-light
+                form(action="/otp" method="post" class="form")
+                    div.mb-4
+                        label(for="otp" class="form-label") Code
+                        input(type="text" class="form-control" id="xotp" name="xotp" aria-describedby="otp" placeholder="Enter your code")
+                    div.mb-4.text-center
+                        button(type="submit" class="btn btn-success") Submit
+                        p=message
+            div.col-lg-3

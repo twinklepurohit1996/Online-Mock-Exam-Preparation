@@ -1,0 +1,52 @@
+extends layout.pug 
+
+block content
+    include nav.pug
+    include side.pug
+    div.web
+        h1.text-center.text-uppercase.p-3 question page
+        div.container
+            div.row
+                div.col-lg-3
+                div.col-lg-6.card.p-4
+                    form(action="/admin/que" method="post")
+                        div.mb-4.text-center.fw-bold.display-7
+                            p=message
+                        div.mb-4.from-group 
+                            label(for="rid" class="col-sm-2 form-label fw-bold display-7") Reference Id
+                            <select id="rid" name="rid" class="col-sm-12 p-2 drop">
+                                <option value="Select ID" class="text-secondary">Select Refereance Id</option>
+                                each item in dataa    
+                                    <option>#{item.rid}</option>   
+                            </select>
+                        div.mb-4.from-group
+                            label(for="lid" class="col-sm-2 form-label fw-bold display-7") Level Id
+                            <select id="lid" name="lid" class="col-sm-12 p-2 drop">
+                                <option value="Select ID" class="text-secondary">Select Level Id</option>
+                                each item in dataaa    
+                                    <option>#{item.lid}</option>   
+                            </select>
+                        div.mb-4
+                            label(for="que_num" class="form-label fw-bold display-7") Question No.
+                            input(type="text" class="form-control" id="que_num"  name="que_num" aria-describedby="que_num" placeholder="Enter Question Number")
+                        div.mb-4
+                            label(for="que" class="form-label fw-bold display-7") Question
+                            input(type="text" class="form-control" id="que" name="que" aria-describedby="que" placeholder="Enter Question")
+                        div.mb-4
+                            label(for="a" class="form-label fw-bold display-7") Option 1
+                            input(type="text" class="form-control" id="a" name="a" aria-describedby="a" placeholder="Enter Option 1")
+                        div.mb-4
+                            label(for="b" class="form-label fw-bold display-7") Option 2
+                            input(type="text" class="form-control" id="b" name="b" aria-describedby="b" placeholder="Enter Option 2")
+                        div.mb-4
+                            label(for="c" class="form-label fw-bold display-7") Option 3
+                            input(type="text" class="form-control" id="c" name="c" aria-describedby="c" placeholder="Enter Option 3")
+                        div.mb-4
+                            label(for="d" class="form-label fw-bold display-7") Option 4
+                            input(type="text" class="form-control" id="d" name="d" aria-describedby="d" placeholder="Enter Option 4")
+                        div.mb-4
+                            label(for="cans" class="form-label fw-bold display-7") Correct Answer
+                            input(type="text" class="form-control" id="cans" name="cans" aria-describedby="cans" placeholder="Enter Correct Answer")
+                        div.mb-4.text-center
+                            button(type="submit" class="btn btn-primary") Submit
+                div.col-lg-3

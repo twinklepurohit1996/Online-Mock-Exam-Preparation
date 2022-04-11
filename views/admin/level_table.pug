@@ -1,0 +1,52 @@
+extends layout.pug 
+
+block content 
+    include nav.pug
+    include side.pug
+    div.web
+        <h1 class="text-center text-uppercase p-3"> Level Table </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 p-3 card">
+                    <p>#{mess}</p>
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Reference ID</th>
+                                <th>Level Id</th>
+                                <th>Level Name</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>   
+                            each item in data    
+                                //- tr
+                                //-     -var i=0;
+                                //-     if i< item.id
+                                //-         td= item.id
+                                //-     -i++;            
+                                tr
+                                    td= item.id
+                                    td= item.rid
+                                    td= item.lid
+                                    td= item.levelname
+                                    td 
+                                        a(href="/admin/level_edit/" + item.id) 
+                                            i.fas.icon.fa-pencil
+                                    td 
+                                        a(href="/admin/level_delete/" + item.id) 
+                                            i.fas.icon.fa-trash-alt
+                                    td 
+                                        a(href="/admin/level_status/" + item.id) 
+                                            i.fas.icon.fa-eye
+                        </tbody>
+                    </table>    
+                </div>
+                <div class="col-lg-1"></div>
+            </div>
+        </div>    
+

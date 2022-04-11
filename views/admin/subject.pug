@@ -1,0 +1,23 @@
+extends layout.pug 
+
+block content
+    include nav.pug
+    include side.pug
+    div.web
+        h1.text-center.text-uppercase.p-3 Subject page
+        div.container
+            div.row
+                div.col-lg-3
+                div.col-lg-6.card.p-4
+                    form(action="/admin/sub" method="post")
+                        div.mb-4.text-center.fw-bold.display-7
+                            p=message
+                        div.mb-4
+                            label(for="rid" class="form-label fw-bold display-7") Reference Id
+                            input(type="text" class="form-control" id="rid" name="rid" aria-describedby="rid" placeholder="reference number")
+                        div.mb-4
+                            label(for="sub_name" class="form-label fw-bold display-7") Subject Name
+                            input(type="text" class="form-control" id="sub_name" name="sub_name" aria-describedby="sub_name" placeholder="Enter subject name")
+                        div.mb-4.text-center
+                            button(type="submit" class="btn text-white") Submit
+                div.col-lg-3

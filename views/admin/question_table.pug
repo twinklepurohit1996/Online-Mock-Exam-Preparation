@@ -1,0 +1,58 @@
+extends layout.pug 
+
+block content
+    include nav.pug
+    include side.pug
+    div.web
+        <h1 class="text-center text-uppercase p-3"> Question Table </h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-10 card">
+                    <p>#{mess}</p>
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Reference ID</th>
+                                <th>Level ID</th>
+                                <th>Question No.</th>
+                                <th>Question</th>
+                                <th>Option 1</th>
+                                <th>Option 2</th>
+                                <th>Option 3</th>
+                                <th>Option 4</th>
+                                <th>Correct Answer</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>   
+                            each item in data               
+                                tr
+                                    td= item.id
+                                    td= item.rid
+                                    td= item.lid
+                                    td= item.questionnumber 
+                                    td= item.question 
+                                    td= item.a
+                                    td= item.b
+                                    td= item.c
+                                    td= item.d
+                                    td= item.correctanswer
+                                    td 
+                                        a(href="/admin/que_edit/" + item.id) 
+                                            i.fas.icon.fa-pencil
+                                    td 
+                                        a(href="/admin/que_delete/" + item.id) 
+                                            i.fas.icon.fa-trash-alt
+                                    td 
+                                        a(href="/admin/que_status/" + item.id) 
+                                            i.fas.icon.fa-eye
+                        </tbody>
+                    </table>    
+                </div>
+            </div>
+        </div>    
+

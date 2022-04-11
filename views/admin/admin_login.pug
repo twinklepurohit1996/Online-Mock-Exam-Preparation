@@ -1,0 +1,21 @@
+extends layout.pug 
+
+block content 
+    div.const
+        div.container
+            div.row
+                div.col-lg-3
+                div.col-lg-6.p-4.frame
+                    h1.text-center.text-white.p-4 Admin Page
+                    form(action="/admin/log" method="post" class="form")
+                        div.mb-4
+                            p #{message}
+                        div.mb-4
+                            label(for="name" class="form-label text-white") Admin Name
+                            input(type="name" class="form-control" id="name" name="xname" aria-describedby="name" placeholder="Admin ID")
+                        div.mb-4
+                            label(for="pass" class="form-label text-white") Password
+                            input(type="password" class="form-control" id="pass"  name="xpass" placeholder="**********")
+                        div.mb-4.text-center
+                            button(type="submit" class="btn btn-primary") Login
+                div.col-lg-3

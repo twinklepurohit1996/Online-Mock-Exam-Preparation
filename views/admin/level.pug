@@ -1,0 +1,29 @@
+extends layout.pug 
+
+block content 
+    include nav.pug
+    include side.pug
+    div.web
+        h1.text-center.text-uppercase.p-3 level page
+        div.container
+            div.row
+                div.col-lg-3
+                div.col-lg-6.card.p-4
+                    form(action="/admin/level_insert" method="post")
+                        div.mb-4.text-center.fw-bold.display-7
+                            p=message
+                        div.mb-4
+                            label(for="lid" class="form-label fw-bold display-7") Level Id
+                            input(type="text" class="form-control" id="lid" name="lid" aria-describedby="lid" placeholder="Level Id")
+                        div.mb-4.from-group 
+                            label(for="rid" class="col-sm-2 form-label fw-bold display-7") Reference Id
+                            select(id="rid" name="rid" class="col-sm-12 p-2 drop")
+                                option(value="Select ID") Select Refereance Id
+                                each item in data    
+                                    option #{item.rid}   
+                        div.mb-4
+                            label(for="level_name" class="form-label fw-bold display-7") Level Name
+                            input(type="text" class="form-control" id="level_name" name="level_name" aria-describedby="level_name" placeholder="Enter Level Name")
+                        div.mb-4.text-center
+                            button(type="submit" class="btn text-white") Submit
+                div.col-lg-3

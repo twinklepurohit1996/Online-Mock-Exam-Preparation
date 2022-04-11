@@ -1,0 +1,55 @@
+extends layout_user.pug
+
+block content
+    //- include navbar_home.pug
+    div.exam
+        div.container-fluid
+            div.row.heading
+                div(class="title fw-bold text-uppercase") 
+                    h4.mt-3.text-white Online Exam
+            div.row.block
+                div.col-sm-9.questionBox.bg-info Section
+                    span.time.text-danger &nbsp;5:00
+                    span.time.fw-bold Time Left :
+                    hr
+                    span.questionNo Question No . 1
+                    hr
+                    p &nbsp; 1. What is C Language?
+                    p &nbsp; (a) Oop 
+                    p &nbsp; (b) wds 
+                    p &nbsp; (c) dsd 
+                    p &nbsp; (d) sdsjd
+                    button(class="btn btn-outline-dark  btn1" id="sm") Mark for Review & Next
+                    button(class="btn btn-outline-dark btn2" id="sm2") Clear Response
+                    button(class="btn btn-outline-dark btn3" id="sm3") Save & Next
+                div.col-sm-3.questionList.row.m-0
+                    div.user
+                        p.m-3
+                            img(src="../upload/t3.jpg" id="image1" class="rounded-circle" height=70 width=70 alt="")
+                            span &nbsp;&nbsp;&nbsp; User Name
+                            hr 
+                            img(src="../image/user/green.png" height=30 width=30)
+                            span &nbsp;&nbsp; Answered
+                            img(src="../image/user/red.png" height=30 width=30 style="margin-left:35px;")
+                            span &nbsp;&nbsp; Not Answered
+                        p
+                            img(src="../image/user/rect.png" height=30 width=30)
+                            span &nbsp;&nbsp; Not Visited
+                            img(src="../image/user/circle.png" height=30 width=30 style="margin-left:25px;")
+                            span &nbsp;&nbsp; Mark for Review 
+                        p
+                            img(src="../image/user/circle_check.png" height=30 width=30)
+                            span &nbsp;&nbsp; Answered & Marked for Review
+                        hr
+                    div.ques-no.row.m-0
+                        each row in data
+                            div.image-rect.col-3
+                                p 
+                                    span.num= row.questionnumber 
+                                    img(src="../image/user/rect.png" class="rectangle" height=40 width=50)
+                                //- img(src="../image/user/rect.png" class="rectangle" height=40 width=50)
+                                //- div.number
+                                //-     p.ddt= row.questionnumber
+                                    
+                                    
+

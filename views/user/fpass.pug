@@ -1,0 +1,17 @@
+extends layout.pug 
+
+block content 
+    div.fpass.bg-danger
+        h1.text-center.p-5 Forget Password Page
+        div.container-fluid
+            div.row
+                div.col-sm-2.bg-primary
+                div.col-sm-8.card.p-4.bg-light
+                    form(action="/email_verify" method="post" class="form")
+                        div.mb-4
+                            label(for="email" class="form-label") Email
+                            input(type="email" class="form-control" id="xemail" name="xemail" aria-describedby="email" placeholder="example@gmail.com")
+                        div.mb-4.text-center
+                            button(type="submit" class="btn btn-success") Submit
+                            p=message
+                div.col-sm-2

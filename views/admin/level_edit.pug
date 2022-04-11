@@ -1,0 +1,32 @@
+extends layout.pug 
+
+block content 
+    include nav.pug
+    include side.pug
+    div.web
+        div.contant
+            div.container.p-5
+                div.row
+                    div.col-lg-3
+                    div.col-lg-6.card.p-4
+                        h1.text-center.text-uppercase.p-3 level edit page
+                        each item in data
+                            form(action="/admin/level_update" method="post")
+                                //- div.mb-4.text-center.fw-bold.display-7
+                                //-     p=message
+                                input(type="hidden" id="xid" name="xid" value=item.id class="form-control")
+                                div.mb-4
+                                    label(for="lid" class="form-label fw-bold display-7") Level Id
+                                    input(type="text" class="form-control" id="lid" value=item.lid name="lid" aria-describedby="lid" placeholder="Level Id")
+                                div.mb-4
+                                    label(for="rid" class="col-sm-2 form-label fw-bold display-7") Reference Id
+                                    select(id="rid" name="rid" class="col-sm-12 p-2 drop")
+                                        option(value="Select ID") Select Refereance Id
+                                        each item in dataa    
+                                            option #{item.rid} 
+                                div.mb-4
+                                    label(for="level_name" class="form-label fw-bold display-7") Level Name
+                                    input(type="text" class="form-control" id="level_name" value=item.levelname name="level_name" aria-describedby="level_name" placeholder="Enter Level Name")
+                                div.mb-4.text-center
+                                    button(type="submit" class="btn btn-primary") Submit
+                        div.col-lg-3
